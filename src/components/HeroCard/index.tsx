@@ -20,7 +20,14 @@ const HeroCard: React.FC<HeroCardProps> = ({ hero, isSelected }) => {
   return (
     <Link to={`/heroes/${id}`}>
       <div className="w-full pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2 ">
-        <div className="bg-white rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300 border-2 border-black-600">
+        <div
+          className="bg-white rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300 border-2 border-black-600"
+          style={{
+            boxShadow: isSelected
+              ? `0 20px 25px -5px rgb(0 0 0 / 0.7), 0 8px 10px -6px rgb(0 0 0 / 0.7)`
+              : ``,
+          }}
+        >
           <figure className="mb-2">
             <img
               src={imageUrl}

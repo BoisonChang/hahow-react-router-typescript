@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import axios from 'axios';
 import { API_BASE_URL } from '../const';
 import { Hero } from '../types';
@@ -13,7 +13,7 @@ export const useFetchHeroes = (): {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<any>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const fetchHeroes = async () => {
       setIsLoading(true);
       try {
